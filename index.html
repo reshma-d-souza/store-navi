@@ -1,28 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>In-Store Navigation System</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-  <body class="bg-gray-50 antialiased">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+<body class="bg-gray-50 font-sans">
+
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-6">In-Store Navigation System</h1>
+
+        <!-- Floor Selector -->
+        <div class="mb-4">
+            <label for="floorSelect" class="mr-2 font-semibold">Select Floor:</label>
+            <select id="floorSelect" class="border rounded p-1">
+                <option value="1">Ground Floor</option>
+                <option value="2">First Floor</option>
+                <option value="3">Second Floor</option>
+            </select>
+        </div>
+
+        <!-- Shops List -->
+        <div class="mb-4">
+            <h2 class="text-xl font-semibold mb-2">Shops List:</h2>
+            <ul id="shopList" class="border rounded p-2 max-h-40 overflow-auto bg-white">
+                <!-- Shop items populated by JS -->
+            </ul>
+        </div>
+
+        <!-- Selected Items -->
+        <div class="mb-4">
+            <h2 class="text-xl font-semibold mb-2">Selected Items:</h2>
+            <ul id="selectedItems" class="border rounded p-2 max-h-40 overflow-auto bg-white">
+                <!-- Selected items populated by JS -->
+            </ul>
+        </div>
+
+        <!-- Navigation Info -->
+        <div>
+            <h2 class="text-xl font-semibold mb-2">Navigation Info:</h2>
+            <div id="navigationInfo" class="border rounded p-2 bg-white min-h-[60px]">
+                Select items to see shortest path.
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
